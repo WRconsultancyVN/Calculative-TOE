@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHUYỂN ĐỔI NĂNG LƯỢNG SNAG TOE</title>
+  <title>CHUYỂN ĐỔI NĂNG LƯỢNG SANG TOE</title>
 
   <style>
     body{
@@ -199,103 +199,89 @@
 <script>
 
 function calculateTOE(){
+  
 
   let electricity =
     parseFloat(document.getElementById("electricity").value) || 0;
-
+  let toeElectricity = electricity * 0.0001543;
+  document.getElementById("toe_electricity").innerText =
+    toeElectricity.toFixed(4);
+  
   let diesel =
     parseFloat(document.getElementById("diesel").value) || 0;
+   let toeDiesel = diesel * 0.00088;
+   document.getElementById("toe_diesel").innerText =
+    toeDiesel.toFixed(4); 
 
   let dieselT =
     parseFloat(document.getElementById("dieselT").value) || 0;
+    let toeDieselT = dieselT * 1.02;
+   document.getElementById("toe_dieselT").innerText =
+    toeDieselT.toFixed(4);
   
   let gasoline =
     parseFloat(document.getElementById("gasoline").value) || 0;
+  let toeGasoline = gasoline * 0.00083;
+  document.getElementById("toe_gasoline").innerText =
+    toeGasoline.toFixed(4);  
 
   let gasolineT =
     parseFloat(document.getElementById("gasolineT").value) || 0;
-
-  let Antraxit1_2 =
-    parseFloat(document.getElementById("Antraxit1_2").value) || 0;
-
-  let Antraxit3_4 =
-    parseFloat(document.getElementById("Antraxit3_4").value) || 0;
-
-  let Antraxit5_6 =
-    parseFloat(document.getElementById("Antraxit5_6").value) || 0;
-
-  let Coke =
-    parseFloat(document.getElementById("Coke").value) || 0;
-
-  let FO =
-    parseFloat(document.getElementById("FO").value) || 0;
-
-  let FOT =
-    parseFloat(document.getElementById("FOT").value) || 0;
-
-  let LPG =
-    parseFloat(document.getElementById("LPG").value) || 0;
-
-  let Natural_Gas =
-    parseFloat(document.getElementById("Natural_Gas").value) || 0;
-
-  let Jet_Fuel =
-    parseFloat(document.getElementById("Jet_Fuel").value) || 0;
-  
-  let toeElectricity = electricity * 0.0001543;
-  let toeDiesel = diesel * 0.00088;
-  let toeDieselT = dieselT * 1.02;
-  let toeGasoline = gasoline * 0.00083;
-  let toeGasolineT = gasolineT * 1.05;
-  let toeAntraxit1_2 = Antraxit1_2 * 0.0007;
-  let toeAntraxit3_4 = Antraxit3_4 * 0.0006;
-  let toeAntraxit5_6 = Antraxit5_6 * 0.0006;
-  let toeCoke = Coke * 0.000725;
-  let toeFO = FO * 0.00094;
-  let toeFOT = FOT * 0.99;
-  let toeLPG = LPG * 1.09;
-  let toeNatural_Gas = Natural_Gas * 0.9;
-  let toeJet_Fuel = Jet_Fuel * 1.05;
-
-  document.getElementById("toe_electricity").innerText =
-    toeElectricity.toFixed(4);
-
-  document.getElementById("toe_diesel").innerText =
-    toeDiesel.toFixed(4);
-
-  document.getElementById("toe_dieselT").innerText =
-    toeDieselT.toFixed(4);
-
-  document.getElementById("toe_gasoline").innerText =
-    toeGasoline.toFixed(4);
-
+   let toeGasolineT = gasolineT * 1.05;
   document.getElementById("toe_gasolineT").innerText =
     toeGasolineT.toFixed(4);
 
+  let Antraxit1_2 =
+    parseFloat(document.getElementById("Antraxit1_2").value) || 0;
+   let toeAntraxit1_2 = Antraxit1_2 * 0.0007;
   document.getElementById("toe_Antraxit1_2").innerText =
     toeAntraxit1_2.toFixed(4);
 
+  let Antraxit3_4 =
+    parseFloat(document.getElementById("Antraxit3_4").value) || 0;
+  let toeAntraxit3_4 = Antraxit3_4 * 0.0006;
   document.getElementById("toe_Antraxit3_4").innerText =
     toeAntraxit3_4.toFixed(4);
 
+  let Antraxit5_6 =
+    parseFloat(document.getElementById("Antraxit5_6").value) || 0;
+  let toeAntraxit5_6 = Antraxit5_6 * 0.0006;
   document.getElementById("toe_Antraxit5_6").innerText =
     toeAntraxit5_6.toFixed(4);
 
+  let Coke =
+    parseFloat(document.getElementById("Coke").value) || 0;
+  let toeCoke = Coke * 0.000725;
   document.getElementById("toe_Coke").innerText =
-    toeCoke.toFixed(4);
+    toeCoke.toFixed(4);  
 
+  let FO =
+    parseFloat(document.getElementById("FO").value) || 0;
+  let toeFO = FO * 0.00094;
   document.getElementById("toe_FO").innerText =
-    toeFO.toFixed(4);
+    toeFO.toFixed(4);  
 
+  let FOT =
+    parseFloat(document.getElementById("FOT").value) || 0;
+  let toeFOT = FOT * 0.99;
   document.getElementById("toe_FOT").innerText =
     toeFOT.toFixed(4);
 
+  let LPG =
+    parseFloat(document.getElementById("LPG").value) || 0;
+  let toeLPG = LPG * 1.09;
   document.getElementById("toe_LPG").innerText =
     toeLPG.toFixed(4);
 
+  let Natural_Gas =
+    parseFloat(document.getElementById("Natural_Gas").value) || 0;
+  let toeNatural_Gas = Natural_Gas * 0.9;
   document.getElementById("toe_Natural_Gas").innerText =
     toeNatural_Gas.toFixed(4);
 
+  let Jet_Fuel =
+    parseFloat(document.getElementById("Jet_Fuel").value) || 0;
+  let toeJet_Fuel = Jet_Fuel * 1.05;
   document.getElementById("toe_Jet_Fuel").innerText =
     toeJet_Fuel.toFixed(4);
 
