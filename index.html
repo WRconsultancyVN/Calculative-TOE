@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOE Calculator</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      background:#f4f6f9;
+      padding:40px;
+    }
+
+    .container{
+      max-width:700px;
+      margin:auto;
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th, td{
+      padding:12px;
+      border-bottom:1px solid #ddd;
+      text-align:center;
+    }
+
+    input{
+      width:100px;
+      padding:8px;
+    }
+
+    .result{
+      font-weight:bold;
+      color:green;
+    }
+
+    .total{
+      margin-top:30px;
+      font-size:24px;
+      text-align:right;
+      font-weight:bold;
+      color:#0066cc;
+    }
+
+    button{
+      margin-top:20px;
+      width:100%;
+      padding:15px;
+      border:none;
+      background:#0066cc;
+      color:white;
+      font-size:18px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#004999;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>TOE Calculator</h1>
+
+  <table>
+    <tr>
+      <th>Energy Type</th>
+      <th>Amount</th>
+      <th>TOE Factor</th>
+      <th>TOE</th>
+    </tr>
+
+    <tr>
+      <td>Electricity (kWh)</td>
+      <td><input type="number" id="electricity"></td>
+      <td>0.000086</td>
+      <td class="result" id="toe_electricity">0</td>
+    </tr>
+
+    <tr>
+      <td>Diesel (L)</td>
+      <td><input type="number" id="diesel"></td>
+      <td>0.00084</td>
+      <td class="result" id="toe_diesel">0</td>
+    </tr>
+
+    <tr>
+      <td>Gasoline (L)</td>
+      <td><input type="number" id="gasoline"></td>
+      <td>0.00077</td>
+      <td class="result" id="toe_gasoline">0</td>
+    </tr>
+
+  </table>
+
+  <button onclick="calculateTOE()">Calculate TOE</button>
+
+  <div class="total">
+    Total TOE:
+    <span id="total_toe">0</span>
+  </div>
+
+</div>
+
+<script>
+
+function calculateTOE(){
+
+  let electricity =
+    parseFloat(document.getElementById("electricity").value) || 0;
+
+  let diesel =
+    parseFloat(document.getElementById("diesel").value) || 0;
+
+  let gasoline =
+    parseFloat(document.getElementById("gasoline").value) || 0;
+
+  let toeElectricity = electricity * 0.000086;
+  let toeDiesel = diesel * 0.00084;
+  let toeGasoline = gasoline * 0.00077;
+
+  document.getElementById("toe_electricity").innerText =
+    toeElectricity.toFixed(4);
+
+  document.getElementById("toe_diesel").innerText =
+    toeDiesel.toFixed(4);
+
+  document.getElementById("toe_gasoline").innerText =
+    toeGasoline.toFixed(4);
+
+  let total =
+    toeElectricity +
+    toeDiesel +
+    toeGasoline;
+
+  document.getElementById("total_toe").innerText =
+    total.toFixed(4);
+
+}
+
+</script>
+
+</body>
+</html>
