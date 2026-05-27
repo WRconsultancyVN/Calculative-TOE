@@ -174,7 +174,7 @@
     <tr>
       <td>Khí tự nhiên (m3)</td>
       <td><input type="number" id="Natural_Gas" oninput="calculateTOE()"></td>
-      <td>0.9</td>
+      <td>0.0009</td>
       <td class="result" id="toe_Natural_Gas">0</td>
     </tr>
 
@@ -275,7 +275,7 @@ function calculateTOE(){
 
   let Natural_Gas =
     parseFloat(document.getElementById("Natural_Gas").value) || 0;
-  let toeNatural_Gas = Natural_Gas * 0.9;
+  let toeNatural_Gas = Natural_Gas * 0.0009;
   document.getElementById("toe_Natural_Gas").innerText =
     toeNatural_Gas.toFixed(4);
 
