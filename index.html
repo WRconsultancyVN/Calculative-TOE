@@ -365,13 +365,7 @@ function calculateTOE(){
   let toeBOFG = BOFG * 0.00002;
   document.getElementById("toe_BOFG").innerText =
     toeBOFG.toFixed(4);
-
-  let BOFG =
-    parseFloat(document.getElementById("BOFG").value) || 0;
-  let toeBOFG = BOFG * 0.00002;
-  document.getElementById("toe_BOFG").innerText =
-    toeBOFG.toFixed(4);
-
+  
   let steam_6bar =
     parseFloat(document.getElementById("steam_6bar").value) || 0;
   let toesteam_6bar = steam_6bar * 0.0877;
