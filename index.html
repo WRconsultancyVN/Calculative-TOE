@@ -139,7 +139,7 @@
     <tr>
       <td>Than cám loại 5, 6 (Tấn)</td>
       <td><input type="number" id="Antraxit5_6" oninput="calculateTOE()"></td>
-      <td>0.6</td>
+      <td>0.5</td>
       <td class="result" id="toe_Antraxit5_6">0</td>
     </tr>
 
@@ -183,6 +183,69 @@
       <td><input type="number" id="Jet_Fuel" oninput="calculateTOE()"></td>
       <td>1.05</td>
       <td class="result" id="toe_Jet_Fuel">0</td>
+    </tr>
+
+    <tr>
+      <td>Khí lò cốc (COG (m3)</td>
+      <td><input type="number" id="COG" oninput="calculateTOE()"></td>
+      <td>0.00001</td>
+      <td class="result" id="toe_COG">0</td>
+    </tr>
+
+    <tr>
+      <td>Khí lò cao (BFG (m3)</td>
+      <td><input type="number" id="BFG" oninput="calculateTOE()"></td>
+      <td>0.00001</td>
+      <td class="result" id="toe_BFG">0</td>
+    </tr>
+
+    <tr>
+      <td>Khí lò chuyển (BOFG (m3)</td>
+      <td><input type="number" id="BOFG" oninput="calculateTOE()"></td>
+      <td>0.00002</td>
+      <td class="result" id="toe_BOFG">0</td>
+    </tr>
+
+    <tr>
+      <td>Hơi nước (6 bar) (steam_6bar (Tấn)</td>
+      <td><input type="number" id="steam_6bar" oninput="calculateTOE()"></td>
+      <td>0.0877</td>
+      <td class="result" id="toe_steam_6bar">0</td>
+    </tr>
+
+    <tr>
+      <td>Hơi nước (7 bar) (steam_7bar (Tấn)</td>
+      <td><input type="number" id="steam_7bar" oninput="calculateTOE()"></td>
+      <td>0.0879</td>
+      <td class="result" id="toe_steam_7bar">0</td>
+    </tr>
+
+     <tr>
+      <td>Hơi nước (8 bar) (steam_8bar (Tấn)</td>
+      <td><input type="number" id="steam_8bar" oninput="calculateTOE()"></td>
+      <td>0.0881</td>
+      <td class="result" id="toe_steam_8bar">0</td>
+    </tr>
+
+    <tr>
+      <td>Hơi nước (9 bar) (steam_9bar (Tấn)</td>
+      <td><input type="number" id="steam_9bar" oninput="calculateTOE()"></td>
+      <td>0.0883</td>
+      <td class="result" id="toe_steam_9bar">0</td>
+    </tr>
+
+    <tr>
+      <td>Gỗ trấu (Rice_Husk (Tấn)</td>
+      <td><input type="number" id="Rice_Husk" oninput="calculateTOE()"></td>
+      <td>0.37</td>
+      <td class="result" id="toe_Rice_Husk">0</td>
+    </tr>
+
+    <tr>
+      <td>Các dạng sinh khối khác (Other_Biomass (Tấn)</td>
+      <td><input type="number" id="Other_Biomass" oninput="calculateTOE()"></td>
+      <td>0.28</td>
+      <td class="result" id="toe_Other_Biomass">0</td>
     </tr>
     
   </table>
@@ -245,7 +308,7 @@ function calculateTOE(){
 
   let Antraxit5_6 =
     parseFloat(document.getElementById("Antraxit5_6").value) || 0;
-  let toeAntraxit5_6 = Antraxit5_6 * 0.6;
+  let toeAntraxit5_6 = Antraxit5_6 * 0.5;
   document.getElementById("toe_Antraxit5_6").innerText =
     toeAntraxit5_6.toFixed(4);
 
@@ -285,6 +348,66 @@ function calculateTOE(){
   document.getElementById("toe_Jet_Fuel").innerText =
     toeJet_Fuel.toFixed(4);
 
+  let COG =
+    parseFloat(document.getElementById("COG").value) || 0;
+  let toeCOG = COG * 0.00001;
+  document.getElementById("toe_COG").innerText =
+    toeCOG.toFixed(4);
+
+  let BFG =
+    parseFloat(document.getElementById("BFG").value) || 0;
+  let toeBFG = BFG * 0.00001;
+  document.getElementById("toe_BFG").innerText =
+    toeBFG.toFixed(4);
+
+  let BOFG =
+    parseFloat(document.getElementById("BOFG").value) || 0;
+  let toeBOFG = BOFG * 0.00002;
+  document.getElementById("toe_BOFG").innerText =
+    toeBOFG.toFixed(4);
+
+  let BOFG =
+    parseFloat(document.getElementById("BOFG").value) || 0;
+  let toeBOFG = BOFG * 0.00002;
+  document.getElementById("toe_BOFG").innerText =
+    toeBOFG.toFixed(4);
+
+  let steam_6bar =
+    parseFloat(document.getElementById("steam_6bar").value) || 0;
+  let toesteam_6bar = steam_6bar * 0.0877;
+  document.getElementById("toe_steam_6bar").innerText =
+    toesteam_6bar.toFixed(4);
+
+  let steam_7bar =
+    parseFloat(document.getElementById("steam_7bar").value) || 0;
+  let toesteam_7bar = steam_7bar * 0.0879;
+  document.getElementById("toe_steam_7bar").innerText =
+    toesteam_7bar.toFixed(4);
+
+  let steam_8bar =
+    parseFloat(document.getElementById("steam_8bar").value) || 0;
+  let toesteam_8bar = steam_8bar * 0.0881;
+  document.getElementById("toe_steam_8bar").innerText =
+    toesteam_8bar.toFixed(4);
+
+  let steam_9bar =
+    parseFloat(document.getElementById("steam_9bar").value) || 0;
+  let toesteam_9bar = steam_9bar * 0.0883;
+  document.getElementById("toe_steam_9bar").innerText =
+    toesteam_9bar.toFixed(4);
+
+  let Rice_Husk =
+    parseFloat(document.getElementById("Rice_Husk").value) || 0;
+  let toeRice_Husk = Rice_Husk * 0.37;
+  document.getElementById("toe_Rice_Husk").innerText =
+    toeRice_Husk.toFixed(4);
+
+  let Other_Biomass =
+    parseFloat(document.getElementById("Other_Biomass").value) || 0;
+  let toeOther_Biomass = Other_Biomass * 0.28;
+  document.getElementById("toe_Other_Biomass").innerText =
+    toeOther_Biomass.toFixed(4);
+  
   let total =
     toeElectricity +
     toeDiesel +
@@ -299,7 +422,16 @@ function calculateTOE(){
     toeFOT +
     toeLPG +
     toeNatural_Gas +
-    toeJet_Fuel;
+    toeJet_Fuel +
+    toeCOG +
+    toeBFG +
+    toeBOFG +
+    toesteam_6bar +
+    toesteam_7bar +
+    toesteam_8bar +
+    toesteam_9bar +
+    toeRice_Husk +
+    toeOther_Biomass;
 
   document.getElementById("total_toe").innerText =
     total.toFixed(4);
